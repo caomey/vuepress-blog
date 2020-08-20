@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ajax、Axios、fetch | caomey</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/vuepress-blog/IronMan.jpg">
+    <link rel="manifest" href="/vuepress-blog/manifest.json">
+    <link rel="apple-touch-icon" href="/vuepress-blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/vuepress-blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/vuepress-blog/assets/css/0.styles.273a7b0f.css" as="style"><link rel="preload" href="/vuepress-blog/assets/js/app.1fefe163.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/2.b8fbb471.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/84.9e6253f7.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/3.8cc36801.js" as="script"><link rel="prefetch" href="/vuepress-blog/assets/js/10.cd279dbb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/100.c0fb210e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/101.8d30554e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/102.8a0cf9d4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/103.291ac59a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/104.cbe3afa8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/105.c56882ff.js"><link rel="prefetch" href="/vuepress-blog/assets/js/106.cda2d11f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/107.4750ce59.js"><link rel="prefetch" href="/vuepress-blog/assets/js/108.6bd8711c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/109.8963da31.js"><link rel="prefetch" href="/vuepress-blog/assets/js/11.536a6c81.js"><link rel="prefetch" href="/vuepress-blog/assets/js/110.718eba1e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/111.ddee2a4f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/112.d7983abc.js"><link rel="prefetch" href="/vuepress-blog/assets/js/113.bd6c9eaa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/114.5837fc08.js"><link rel="prefetch" href="/vuepress-blog/assets/js/115.3a6460b0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/116.e5fab2da.js"><link rel="prefetch" href="/vuepress-blog/assets/js/117.ba8f4c79.js"><link rel="prefetch" href="/vuepress-blog/assets/js/118.2b4a3197.js"><link rel="prefetch" href="/vuepress-blog/assets/js/119.3ff27d52.js"><link rel="prefetch" href="/vuepress-blog/assets/js/12.434382aa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/120.132a3b78.js"><link rel="prefetch" href="/vuepress-blog/assets/js/121.5dbfe861.js"><link rel="prefetch" href="/vuepress-blog/assets/js/122.8385dd7c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/123.72b73cc7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/124.e131c72c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/125.a37ecd68.js"><link rel="prefetch" href="/vuepress-blog/assets/js/126.e72a7d82.js"><link rel="prefetch" href="/vuepress-blog/assets/js/127.d66a2a19.js"><link rel="prefetch" href="/vuepress-blog/assets/js/128.d2bbbe9a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/129.3e2a0852.js"><link rel="prefetch" href="/vuepress-blog/assets/js/13.fb36c840.js"><link rel="prefetch" href="/vuepress-blog/assets/js/130.bcfb0fa6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/131.2cfd46af.js"><link rel="prefetch" href="/vuepress-blog/assets/js/132.6f2e8b4e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/133.ae9c691c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/134.702e47f0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/135.5a30dc50.js"><link rel="prefetch" href="/vuepress-blog/assets/js/14.ad2e8bac.js"><link rel="prefetch" href="/vuepress-blog/assets/js/15.0f97ae19.js"><link rel="prefetch" href="/vuepress-blog/assets/js/16.3b6376b8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/17.31b1fa2c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/18.f86cdf82.js"><link rel="prefetch" href="/vuepress-blog/assets/js/19.53cdc9aa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/20.5a4bbd54.js"><link rel="prefetch" href="/vuepress-blog/assets/js/21.b99ff10c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/22.f99fe9ba.js"><link rel="prefetch" href="/vuepress-blog/assets/js/23.10dc7fca.js"><link rel="prefetch" href="/vuepress-blog/assets/js/24.d230860c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/25.9c3b581e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/26.a8de871f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/27.f5ed37c9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/28.e8964090.js"><link rel="prefetch" href="/vuepress-blog/assets/js/29.955cbeb7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/30.0687291f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/31.e2d55fe8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/32.0dbb88b9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/33.30b6b38d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/34.2f7312c1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/35.c1b415cc.js"><link rel="prefetch" href="/vuepress-blog/assets/js/36.4beeae64.js"><link rel="prefetch" href="/vuepress-blog/assets/js/37.e1388faa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/38.69a20638.js"><link rel="prefetch" href="/vuepress-blog/assets/js/39.52e7e99c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/4.e9822a5e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/40.eec866eb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/41.edd49088.js"><link rel="prefetch" href="/vuepress-blog/assets/js/42.dcefeead.js"><link rel="prefetch" href="/vuepress-blog/assets/js/43.a150f1f8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/44.0897b967.js"><link rel="prefetch" href="/vuepress-blog/assets/js/45.92014b01.js"><link rel="prefetch" href="/vuepress-blog/assets/js/46.88f2b7d5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/47.7a7996d1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/48.7bd7e4a9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/49.3cb9f71b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/5.b62578dd.js"><link rel="prefetch" href="/vuepress-blog/assets/js/50.041863a4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/51.6e4bbbd6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/52.1216a3e8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/53.0bc84fb7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/54.446406fd.js"><link rel="prefetch" href="/vuepress-blog/assets/js/55.cb8a10d9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/56.bd7ec791.js"><link rel="prefetch" href="/vuepress-blog/assets/js/57.a2be869f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/58.49b32794.js"><link rel="prefetch" href="/vuepress-blog/assets/js/59.d0e84679.js"><link rel="prefetch" href="/vuepress-blog/assets/js/6.308ae663.js"><link rel="prefetch" href="/vuepress-blog/assets/js/60.b463cf62.js"><link rel="prefetch" href="/vuepress-blog/assets/js/61.18ea4a28.js"><link rel="prefetch" href="/vuepress-blog/assets/js/62.82840815.js"><link rel="prefetch" href="/vuepress-blog/assets/js/63.5f7fe631.js"><link rel="prefetch" href="/vuepress-blog/assets/js/64.5f07afaa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/65.51714dd5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/66.fa2ffdde.js"><link rel="prefetch" href="/vuepress-blog/assets/js/67.fa6a9559.js"><link rel="prefetch" href="/vuepress-blog/assets/js/68.a06bf7a5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/69.c8ffa604.js"><link rel="prefetch" href="/vuepress-blog/assets/js/7.fba07196.js"><link rel="prefetch" href="/vuepress-blog/assets/js/70.e38e605d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/71.fdf3b49e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/72.c66075d5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/73.27a73b1b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/74.dbff0f08.js"><link rel="prefetch" href="/vuepress-blog/assets/js/75.9ad98215.js"><link rel="prefetch" href="/vuepress-blog/assets/js/76.8606dd05.js"><link rel="prefetch" href="/vuepress-blog/assets/js/77.01831823.js"><link rel="prefetch" href="/vuepress-blog/assets/js/78.c55073af.js"><link rel="prefetch" href="/vuepress-blog/assets/js/79.25c7ced6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/8.3b8959ce.js"><link rel="prefetch" href="/vuepress-blog/assets/js/80.d390edc0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/81.934f3df7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/82.15582332.js"><link rel="prefetch" href="/vuepress-blog/assets/js/83.b8766bab.js"><link rel="prefetch" href="/vuepress-blog/assets/js/85.716ae9a2.js"><link rel="prefetch" href="/vuepress-blog/assets/js/86.cfd1aaf1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/87.ba389498.js"><link rel="prefetch" href="/vuepress-blog/assets/js/88.2f7a76da.js"><link rel="prefetch" href="/vuepress-blog/assets/js/89.57c56027.js"><link rel="prefetch" href="/vuepress-blog/assets/js/9.8dc45838.js"><link rel="prefetch" href="/vuepress-blog/assets/js/90.a9cdbd1d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/91.c588a160.js"><link rel="prefetch" href="/vuepress-blog/assets/js/92.bfa64f4c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/93.601d0901.js"><link rel="prefetch" href="/vuepress-blog/assets/js/94.fabea959.js"><link rel="prefetch" href="/vuepress-blog/assets/js/95.980ea76f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/96.e35c0be4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/97.c95cd61e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/98.84d23e7f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/99.b411d56b.js">
+    <link rel="stylesheet" href="/vuepress-blog/assets/css/0.styles.273a7b0f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-blog/" class="home-link router-link-active"><!----> <span class="site-name">caomey</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/vuepress-blog/guide/" class="nav-link">
+  GUIDE
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript/" class="nav-link">
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript底层机制/" class="nav-link">
+  javascript底层机制
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/html/" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vuepress/" class="nav-link">
+  vuepress
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue-cli/" class="nav-link">
+  vue-cli
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vueRouter/" class="nav-link">
+  vueRouter
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Node.js/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/webpack/" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codepen/" class="nav-link">
+  codepen
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/others/" class="nav-link router-link-active">
+  others
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/前端设计模式/" class="nav-link">
+  Design Patterns
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codename/" class="nav-link">
+  codename
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/UI/" class="nav-link">
+  UI
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/算法题/" class="nav-link">
+  算法题
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vscode/" class="nav-link">
+  Vscode
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/函数式编程/" class="nav-link">
+  函数式编程
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/caomey?tab=repositories" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/vuepress-blog/guide/" class="nav-link">
+  GUIDE
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript/" class="nav-link">
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript底层机制/" class="nav-link">
+  javascript底层机制
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/html/" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vuepress/" class="nav-link">
+  vuepress
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue-cli/" class="nav-link">
+  vue-cli
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vueRouter/" class="nav-link">
+  vueRouter
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Node.js/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/webpack/" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codepen/" class="nav-link">
+  codepen
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/others/" class="nav-link router-link-active">
+  others
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/前端设计模式/" class="nav-link">
+  Design Patterns
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codename/" class="nav-link">
+  codename
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/UI/" class="nav-link">
+  UI
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/算法题/" class="nav-link">
+  算法题
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vscode/" class="nav-link">
+  Vscode
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/函数式编程/" class="nav-link">
+  函数式编程
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/caomey?tab=repositories" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>others</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-blog/frontend/others/HTTP协议TCPIP协议.html" class="sidebar-link">Http协议与TCP/IP协议</a></li><li><a href="/vuepress-blog/frontend/others/Mock实战.html" class="sidebar-link">Mock实战</a></li><li><a href="/vuepress-blog/frontend/others/" aria-current="page" class="sidebar-link">/frontend/others/</a></li><li><a href="/vuepress-blog/frontend/others/Vue总结.html" class="sidebar-link">Vue学习总结</a></li><li><a href="/vuepress-blog/frontend/others/ajax和axios.html" class="active sidebar-link">Ajax、Axios、fetch</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/others/ajax和axios.html#ajax" class="sidebar-link">Ajax</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/others/ajax和axios.html#axios" class="sidebar-link">Axios</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/others/ajax和axios.html#fetch" class="sidebar-link">Fetch</a></li></ul></li><li><a href="/vuepress-blog/frontend/others/axios基本使用.html" class="sidebar-link">axios</a></li><li><a href="/vuepress-blog/frontend/others/cookie&amp;session.html" class="sidebar-link">Cookie\ Session\ localStorage \sessionStorage\token知识梳理</a></li><li><a href="/vuepress-blog/frontend/others/typora画流程图.html" class="sidebar-link">typora 画流程图</a></li><li><a href="/vuepress-blog/frontend/others/webgl.html" class="sidebar-link">webgl</a></li><li><a href="/vuepress-blog/frontend/others/本地存储.html" class="sidebar-link">本地存储</a></li><li><a href="/vuepress-blog/frontend/others/浏览器兼容性.html" class="sidebar-link">一、常见的浏览器内核</a></li><li><a href="/vuepress-blog/frontend/others/谷歌浏览器调试工具.html" class="sidebar-link">谷歌浏览器调试工具</a></li><li><a href="/vuepress-blog/frontend/others/跨域.html" class="sidebar-link">跨域(非同源策略请求)</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ajax、axios、fetch"><a href="#ajax、axios、fetch" class="header-anchor">#</a> Ajax、Axios、fetch</h1> <h2 id="ajax"><a href="#ajax" class="header-anchor">#</a> Ajax</h2> <h3 id="什么是ajax（无刷新数据读取）"><a href="#什么是ajax（无刷新数据读取）" class="header-anchor">#</a> 什么是Ajax（无刷新数据读取）</h3> <p>Ajax 提供了一种方式，让你无需刷新页面就可以异步获取数据</p> <p>Ajax 的核心就是 浏览器提供的XHR(XMLHttpRequest) 对象</p> <p>原理：ajax库是对XMLHTTPRequest对象的一种封装,是XMLHTTPRequest的一个实例</p> <h3 id="ajax的缺点"><a href="#ajax的缺点" class="header-anchor">#</a> ajax的缺点</h3> <p>传统 Ajax 指的是 XMLHttpRequest（XHR）， 最早出现的发送后端请求技术，隶属于原始js中，核心使用XMLHttpRequest对象，多个请求之间如果有先后关系的话，就会出现<strong>回调地狱</strong>。
+JQuery ajax 是对原生XHR的封装，除此以外还增添了对<strong>JSONP</strong>的支持。经过多年的更新维护，真的已经是非常的方便了，优点无需多言；如果是硬要举出几个缺点，那可能只有：
+1.本身是针对MVC的编程,不符合现在前端<strong>MVVM</strong>的浪潮
+2.基于原生的XHR开发，XHR本身的架构不清晰。
+3.JQuery整个项目太大，单纯使用ajax却要引入整个JQuery非常的不合理（采取个性化打包的方案又不能享受CDN服务）
+4.不符合关注分离（Separation of Concerns）的原则
+5.配置和调用方式非常混乱，而且基于事件的异步模型不友好。</p> <h3 id="jquery-中的-ajax"><a href="#jquery-中的-ajax" class="header-anchor">#</a> jQuery 中的 AJAX</h3> <div class="language- extra-class"><pre class="language-text"><code>$.ajax({
+  url: '/time',
+  type: 'get',
+  dataType: 'json',
+  data: { id: 1 },
+  success: function (data) {
+    console.log(data)
+  },
+  error: function (xhr) {
+    console.log(xhr)
+  },
+})
+</code></pre></div><p>常用选项参数介绍：</p> <ul><li>url：请求地址</li> <li>type：请求方法，默认为 <code>get</code></li> <li>dataType：服务端响应数据类型</li> <li>contentType：请求体内容类型，默认 <code>application/x-www-form-urlencoded</code></li> <li>data：需要传递到服务端的数据，如果 GET 则通过 URL 传递，如果 POST 则通过请求体传递</li> <li>timeout：请求超时时间</li> <li>beforeSend：请求发起之前触发</li> <li>success：请求成功之后触发（响应状态码 200）</li> <li>error：请求失败触发</li> <li>complete：请求完成触发（不管成功与否）</li></ul> <hr> <h2 id="axios"><a href="#axios" class="header-anchor">#</a> Axios</h2> <p>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，本质上也是对原生XHR的封装，只不过它是Promise的实现版本，符合最新的ES规范，它本身具有以下特征：
+　　1.从浏览器中创建 XMLHttpRequest
+　　2.支持 Promise API
+　　3.客户端支持防止CSRF(cross-site request forgery)
+　　4.提供了一些并发请求的接口（重要，方便了很多的操作）
+　　5.从 node.js 创建 http 请求
+　　6.拦截请求和响应
+　　7.转换请求和响应数据
+　　8.取消请求
+　　9.自动转换JSON数据</p> <p><strong>axios既提供了并发的封装，也没有fetch的各种问题，而且体积也较小，当之无愧现在最应该选用的请求的方式。</strong></p> <h3 id="get方法"><a href="#get方法" class="header-anchor">#</a> GET方法</h3> <div class="language-js extra-class"><pre class="language-js"><code>Axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'demo/url'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    params<span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'Henry'</span><span class="token punctuation">,</span>
+        sex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        phone<span class="token operator">:</span> <span class="token number">13333333</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="delete方法"><a href="#delete方法" class="header-anchor">#</a> DELETE方法</h3> <div class="language-js extra-class"><pre class="language-js"><code>Axios<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">'demo/url'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'Henry'</span><span class="token punctuation">,</span>
+        sex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        phone<span class="token operator">:</span> <span class="token number">13333333</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="post方法"><a href="#post方法" class="header-anchor">#</a> POST方法</h3> <div class="language-js extra-class"><pre class="language-js"><code>Axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'demo/url'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    id<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">'Henry'</span><span class="token punctuation">,</span>
+    sex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    phone<span class="token operator">:</span> <span class="token number">13333333</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="put方法"><a href="#put方法" class="header-anchor">#</a> PUT方法</h3> <div class="language-js extra-class"><pre class="language-js"><code>Axios<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">'demo/url'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    id<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">'Henry'</span><span class="token punctuation">,</span>
+    sex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    phone<span class="token operator">:</span> <span class="token number">13333333</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="patch方法"><a href="#patch方法" class="header-anchor">#</a> PATCH方法</h3> <div class="language-js extra-class"><pre class="language-js"><code>Axios<span class="token punctuation">.</span><span class="token function">patch</span><span class="token punctuation">(</span><span class="token string">'demo/url'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    id<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">'Henry'</span><span class="token punctuation">,</span>
+    sex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    phone<span class="token operator">:</span> <span class="token number">13333333</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><hr> <h2 id="fetch"><a href="#fetch" class="header-anchor">#</a> Fetch</h2> <p><strong>fetch号称是AJAX的替代品，是在ES6出现的，使用了ES6中的promise对象</strong>。Fetch是基于promise设计的。Fetch的代码结构比起ajax简单多了，参数有点像jQuery ajax。但是，一定记住fetch不是ajax的进一步封装，而是原生js，没有使用XMLHttpRequest对象。
+fetch的优点：
+1.符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里
+2.更好更方便的写法,fetch的优势主要优势就是：</p> <div class="language- extra-class"><pre class="language-text"><code>
+1.  语法简洁，更加语义化
+2.  基于标准 Promise 实现，支持 async/await
+3.  同构方便，使用 [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch)
+4.fetch请求默认是不带cookie的，需要设置fetch（URL，{credentials:’include’})。
+5.更加底层，提供的API丰富（request, response）
+6.脱离了XHR，是ES规范里新的实现方式
+7.fetch只对网络请求报错，对400，500都当做成功的请求，服务器返回 400，500 错误码时并不会 reject，只有网络错误这些导致请求不能完成时，fetch 才会被 reject。
+1）fetch默认不会带cookie，需要添加配置项： fetch(url, {credentials: 'include'})
+2）fetch不支持abort，不支持超时控制，使用setTimeout及Promise.reject的实现的超时控制并不能阻止请求过程继续在后台运行，造成了流量的浪费
+3）fetch没有办法原生监测请求的进度，而XHR可以
+</code></pre></div><h3 id="_1-get请求"><a href="#_1-get请求" class="header-anchor">#</a> 1.GET请求</h3> <div class="language- extra-class"><pre class="language-text"><code>fetch(url)
+    .then(response =&gt; response.json())
+    .then(data =&gt; console.log(data))
+    .catch(e =&gt; console.log(&quot;Oops, error&quot;, e))
+</code></pre></div><ul><li>response.arrayBuffer()</li> <li>response.blob()</li> <li>response.formData()</li> <li>response.json()</li> <li>response.text()</li></ul> <h3 id="_2-post请求"><a href="#_2-post请求" class="header-anchor">#</a> 2.post请求</h3> <div class="language- extra-class"><pre class="language-text"><code>fetch(url,{
+            method:'POST',
+            headers:{
+                'Content-type':'application/json'// 设置请求头数据类型
+            },
+            body:data
+        })
+        .then(res=&gt;res.json())
+        .then(data=&gt;console.log(data))
+</code></pre></div><h3 id="_3-put请求"><a href="#_3-put请求" class="header-anchor">#</a> 3.put请求</h3> <div class="language- extra-class"><pre class="language-text"><code>fetch(url,{
+            method:'PUT',
+            headers:{
+                'Content-type':'application/json'// 设置请求头数据类型
+            },
+            body:data
+        })
+        .then(res=&gt;res.json())
+        .then(data=&gt;console.log(data))
+</code></pre></div><h3 id="_3-delete请求"><a href="#_3-delete请求" class="header-anchor">#</a> 3.delete请求</h3> <div class="language- extra-class"><pre class="language-text"><code>fetch(url,{
+            method:'DELETE',
+            headers:{
+                'Content-type':'application/json'// 设置请求头数据类型
+            },
+            body:data
+        })
+        .then(res=&gt;res.json())
+        .then(data=&gt;console.log(data))
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">7/16/2020, 9:57:48 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress-blog/frontend/others/Vue总结.html" class="prev">
+        Vue学习总结
+      </a></span> <span class="next"><a href="/vuepress-blog/frontend/others/axios基本使用.html">
+        axios
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vuepress-blog/assets/js/app.1fefe163.js" defer></script><script src="/vuepress-blog/assets/js/2.b8fbb471.js" defer></script><script src="/vuepress-blog/assets/js/84.9e6253f7.js" defer></script><script src="/vuepress-blog/assets/js/3.8cc36801.js" defer></script>
+  </body>
+</html>

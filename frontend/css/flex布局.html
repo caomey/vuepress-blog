@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>flex弹性盒子布局 | caomey</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/vuepress-blog/IronMan.jpg">
+    <link rel="manifest" href="/vuepress-blog/manifest.json">
+    <link rel="apple-touch-icon" href="/vuepress-blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/vuepress-blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/vuepress-blog/assets/css/0.styles.273a7b0f.css" as="style"><link rel="preload" href="/vuepress-blog/assets/js/app.1fefe163.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/2.b8fbb471.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/39.52e7e99c.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/3.8cc36801.js" as="script"><link rel="prefetch" href="/vuepress-blog/assets/js/10.cd279dbb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/100.c0fb210e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/101.8d30554e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/102.8a0cf9d4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/103.291ac59a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/104.cbe3afa8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/105.c56882ff.js"><link rel="prefetch" href="/vuepress-blog/assets/js/106.cda2d11f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/107.4750ce59.js"><link rel="prefetch" href="/vuepress-blog/assets/js/108.6bd8711c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/109.8963da31.js"><link rel="prefetch" href="/vuepress-blog/assets/js/11.536a6c81.js"><link rel="prefetch" href="/vuepress-blog/assets/js/110.718eba1e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/111.ddee2a4f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/112.d7983abc.js"><link rel="prefetch" href="/vuepress-blog/assets/js/113.bd6c9eaa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/114.5837fc08.js"><link rel="prefetch" href="/vuepress-blog/assets/js/115.3a6460b0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/116.e5fab2da.js"><link rel="prefetch" href="/vuepress-blog/assets/js/117.ba8f4c79.js"><link rel="prefetch" href="/vuepress-blog/assets/js/118.2b4a3197.js"><link rel="prefetch" href="/vuepress-blog/assets/js/119.3ff27d52.js"><link rel="prefetch" href="/vuepress-blog/assets/js/12.434382aa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/120.132a3b78.js"><link rel="prefetch" href="/vuepress-blog/assets/js/121.5dbfe861.js"><link rel="prefetch" href="/vuepress-blog/assets/js/122.8385dd7c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/123.72b73cc7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/124.e131c72c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/125.a37ecd68.js"><link rel="prefetch" href="/vuepress-blog/assets/js/126.e72a7d82.js"><link rel="prefetch" href="/vuepress-blog/assets/js/127.d66a2a19.js"><link rel="prefetch" href="/vuepress-blog/assets/js/128.d2bbbe9a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/129.3e2a0852.js"><link rel="prefetch" href="/vuepress-blog/assets/js/13.fb36c840.js"><link rel="prefetch" href="/vuepress-blog/assets/js/130.bcfb0fa6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/131.2cfd46af.js"><link rel="prefetch" href="/vuepress-blog/assets/js/132.6f2e8b4e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/133.ae9c691c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/134.702e47f0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/135.5a30dc50.js"><link rel="prefetch" href="/vuepress-blog/assets/js/14.ad2e8bac.js"><link rel="prefetch" href="/vuepress-blog/assets/js/15.0f97ae19.js"><link rel="prefetch" href="/vuepress-blog/assets/js/16.3b6376b8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/17.31b1fa2c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/18.f86cdf82.js"><link rel="prefetch" href="/vuepress-blog/assets/js/19.53cdc9aa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/20.5a4bbd54.js"><link rel="prefetch" href="/vuepress-blog/assets/js/21.b99ff10c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/22.f99fe9ba.js"><link rel="prefetch" href="/vuepress-blog/assets/js/23.10dc7fca.js"><link rel="prefetch" href="/vuepress-blog/assets/js/24.d230860c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/25.9c3b581e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/26.a8de871f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/27.f5ed37c9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/28.e8964090.js"><link rel="prefetch" href="/vuepress-blog/assets/js/29.955cbeb7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/30.0687291f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/31.e2d55fe8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/32.0dbb88b9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/33.30b6b38d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/34.2f7312c1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/35.c1b415cc.js"><link rel="prefetch" href="/vuepress-blog/assets/js/36.4beeae64.js"><link rel="prefetch" href="/vuepress-blog/assets/js/37.e1388faa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/38.69a20638.js"><link rel="prefetch" href="/vuepress-blog/assets/js/4.e9822a5e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/40.eec866eb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/41.edd49088.js"><link rel="prefetch" href="/vuepress-blog/assets/js/42.dcefeead.js"><link rel="prefetch" href="/vuepress-blog/assets/js/43.a150f1f8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/44.0897b967.js"><link rel="prefetch" href="/vuepress-blog/assets/js/45.92014b01.js"><link rel="prefetch" href="/vuepress-blog/assets/js/46.88f2b7d5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/47.7a7996d1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/48.7bd7e4a9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/49.3cb9f71b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/5.b62578dd.js"><link rel="prefetch" href="/vuepress-blog/assets/js/50.041863a4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/51.6e4bbbd6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/52.1216a3e8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/53.0bc84fb7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/54.446406fd.js"><link rel="prefetch" href="/vuepress-blog/assets/js/55.cb8a10d9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/56.bd7ec791.js"><link rel="prefetch" href="/vuepress-blog/assets/js/57.a2be869f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/58.49b32794.js"><link rel="prefetch" href="/vuepress-blog/assets/js/59.d0e84679.js"><link rel="prefetch" href="/vuepress-blog/assets/js/6.308ae663.js"><link rel="prefetch" href="/vuepress-blog/assets/js/60.b463cf62.js"><link rel="prefetch" href="/vuepress-blog/assets/js/61.18ea4a28.js"><link rel="prefetch" href="/vuepress-blog/assets/js/62.82840815.js"><link rel="prefetch" href="/vuepress-blog/assets/js/63.5f7fe631.js"><link rel="prefetch" href="/vuepress-blog/assets/js/64.5f07afaa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/65.51714dd5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/66.fa2ffdde.js"><link rel="prefetch" href="/vuepress-blog/assets/js/67.fa6a9559.js"><link rel="prefetch" href="/vuepress-blog/assets/js/68.a06bf7a5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/69.c8ffa604.js"><link rel="prefetch" href="/vuepress-blog/assets/js/7.fba07196.js"><link rel="prefetch" href="/vuepress-blog/assets/js/70.e38e605d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/71.fdf3b49e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/72.c66075d5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/73.27a73b1b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/74.dbff0f08.js"><link rel="prefetch" href="/vuepress-blog/assets/js/75.9ad98215.js"><link rel="prefetch" href="/vuepress-blog/assets/js/76.8606dd05.js"><link rel="prefetch" href="/vuepress-blog/assets/js/77.01831823.js"><link rel="prefetch" href="/vuepress-blog/assets/js/78.c55073af.js"><link rel="prefetch" href="/vuepress-blog/assets/js/79.25c7ced6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/8.3b8959ce.js"><link rel="prefetch" href="/vuepress-blog/assets/js/80.d390edc0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/81.934f3df7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/82.15582332.js"><link rel="prefetch" href="/vuepress-blog/assets/js/83.b8766bab.js"><link rel="prefetch" href="/vuepress-blog/assets/js/84.9e6253f7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/85.716ae9a2.js"><link rel="prefetch" href="/vuepress-blog/assets/js/86.cfd1aaf1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/87.ba389498.js"><link rel="prefetch" href="/vuepress-blog/assets/js/88.2f7a76da.js"><link rel="prefetch" href="/vuepress-blog/assets/js/89.57c56027.js"><link rel="prefetch" href="/vuepress-blog/assets/js/9.8dc45838.js"><link rel="prefetch" href="/vuepress-blog/assets/js/90.a9cdbd1d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/91.c588a160.js"><link rel="prefetch" href="/vuepress-blog/assets/js/92.bfa64f4c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/93.601d0901.js"><link rel="prefetch" href="/vuepress-blog/assets/js/94.fabea959.js"><link rel="prefetch" href="/vuepress-blog/assets/js/95.980ea76f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/96.e35c0be4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/97.c95cd61e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/98.84d23e7f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/99.b411d56b.js">
+    <link rel="stylesheet" href="/vuepress-blog/assets/css/0.styles.273a7b0f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-blog/" class="home-link router-link-active"><!----> <span class="site-name">caomey</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/vuepress-blog/guide/" class="nav-link">
+  GUIDE
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript/" class="nav-link">
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript底层机制/" class="nav-link">
+  javascript底层机制
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/html/" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/css/" class="nav-link router-link-active">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vuepress/" class="nav-link">
+  vuepress
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue-cli/" class="nav-link">
+  vue-cli
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vueRouter/" class="nav-link">
+  vueRouter
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Node.js/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/webpack/" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codepen/" class="nav-link">
+  codepen
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/others/" class="nav-link">
+  others
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/前端设计模式/" class="nav-link">
+  Design Patterns
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codename/" class="nav-link">
+  codename
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/UI/" class="nav-link">
+  UI
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/算法题/" class="nav-link">
+  算法题
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vscode/" class="nav-link">
+  Vscode
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/函数式编程/" class="nav-link">
+  函数式编程
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/caomey?tab=repositories" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/vuepress-blog/guide/" class="nav-link">
+  GUIDE
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript/" class="nav-link">
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript底层机制/" class="nav-link">
+  javascript底层机制
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/html/" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/css/" class="nav-link router-link-active">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vuepress/" class="nav-link">
+  vuepress
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue-cli/" class="nav-link">
+  vue-cli
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vueRouter/" class="nav-link">
+  vueRouter
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Node.js/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/webpack/" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codepen/" class="nav-link">
+  codepen
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/others/" class="nav-link">
+  others
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/前端设计模式/" class="nav-link">
+  Design Patterns
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codename/" class="nav-link">
+  codename
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/UI/" class="nav-link">
+  UI
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/算法题/" class="nav-link">
+  算法题
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vscode/" class="nav-link">
+  Vscode
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/函数式编程/" class="nav-link">
+  函数式编程
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/caomey?tab=repositories" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-blog/frontend/css/CSS.html" class="sidebar-link">CSS</a></li><li><a href="/vuepress-blog/frontend/css/Less.html" class="sidebar-link">LESS</a></li><li><a href="/vuepress-blog/frontend/css/" aria-current="page" class="sidebar-link">css</a></li><li><a href="/vuepress-blog/frontend/css/css3瀑布流.html" class="sidebar-link">css3瀑布流</a></li><li><a href="/vuepress-blog/frontend/css/css选择器.html" class="sidebar-link">CSS选择器</a></li><li><a href="/vuepress-blog/frontend/css/css问题.html" class="sidebar-link">CSS</a></li><li><a href="/vuepress-blog/frontend/css/flex布局.html" class="active sidebar-link">flex弹性盒子布局</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/css/flex布局.html#二、基本概念" class="sidebar-link">二、基本概念</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/css/flex布局.html#三、相关属性" class="sidebar-link">三、相关属性</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/css/flex布局.html#四、项目属性" class="sidebar-link">四、项目属性</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/css/flex布局.html#问题总结" class="sidebar-link">问题总结</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/css/flex布局.html#calc计算属性配合flex" class="sidebar-link">calc计算属性配合flex</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/css/flex布局.html#css-高度随宽度比例变化" class="sidebar-link">css 高度随宽度比例变化</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/css/flex布局.html#flex是flex-grow、flex-shrink-、flex-basis缩写组合。" class="sidebar-link">flex是flex-grow、flex-shrink 、flex-basis缩写组合。</a></li><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/css/flex布局.html#自己的理解" class="sidebar-link">自己的理解</a></li></ul></li><li><a href="/vuepress-blog/frontend/css/iconfont.html" class="sidebar-link">iconfont</a></li><li><a href="/vuepress-blog/frontend/css/媒体查询响应式布局.html" class="sidebar-link">@media 媒体查询</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="flex弹性盒子布局"><a href="#flex弹性盒子布局" class="header-anchor">#</a> flex弹性盒子布局</h1> <h2 id="二、基本概念"><a href="#二、基本概念" class="header-anchor">#</a> 二、基本概念</h2> <p>采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。</p> <p><img src="https://img-blog.csdnimg.cn/20190405163746672.png" alt=""></p> <p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p> <h2 id="三、相关属性"><a href="#三、相关属性" class="header-anchor">#</a> 三、相关属性</h2> <p>**1、 flex-direction属性：**主轴的排列方向</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">flex-direction</span><span class="token punctuation">:</span> row //<span class="token punctuation">(</span>默认<span class="token punctuation">)</span> ----主轴为水平方向，起点在左端。
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse // ----主轴为水平方向，起点在右端。
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> column // ----主轴为垂直方向，起点在上沿。
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> column-reverse // ----主轴为垂直方向，起点在下沿。
+</code></pre></div><h3 id="_2、flex-wrap属性：定义元素的换行"><a href="#_2、flex-wrap属性：定义元素的换行" class="header-anchor">#</a> 2、flex-wrap属性：定义元素的换行</h3> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">flex-wrap</span><span class="token punctuation">:</span> nowrap //<span class="token punctuation">(</span>默认<span class="token punctuation">)</span> ----表示不换行，平分父元素
+<span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap // ----表示换行布局
+<span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap-reverse // ----换行布局，但首行在下方
+</code></pre></div><h3 id="_3、flex-flow属性：属于以上两个属性的缩写"><a href="#_3、flex-flow属性：属于以上两个属性的缩写" class="header-anchor">#</a> 3、flex-flow属性：属于以上两个属性的缩写</h3> <p>flex-flow 相当于 flex-direction 和 flex-wrap两个属性
+前面记得加上：display:flex</p> <div class="language-css extra-class"><pre class="language-css"><code>flex-flow：row nowrap //<span class="token punctuation">(</span>默认<span class="token punctuation">)</span> 
+</code></pre></div><h3 id="_4、justify-content属性：主轴方向上的对齐方式"><a href="#_4、justify-content属性：主轴方向上的对齐方式" class="header-anchor">#</a> 4、justify-content属性：主轴方向上的对齐方式</h3> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">justify-content</span><span class="token punctuation">:</span> flex-start //<span class="token punctuation">(</span>默认<span class="token punctuation">)</span> ----靠左对齐
+<span class="token property">justify-content</span><span class="token punctuation">:</span> flex-end // ----靠右对齐
+<span class="token property">justify-content</span><span class="token punctuation">:</span> center // ----居中排列
+<span class="token property">justify-content</span><span class="token punctuation">:</span> space-between // ----两端对齐，项目之间的间隔都相等
+<span class="token property">justify-content</span><span class="token punctuation">:</span> space-around // ----每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍
+</code></pre></div><h3 id="_5、align-items属性：交叉轴方向上的对齐方式"><a href="#_5、align-items属性：交叉轴方向上的对齐方式" class="header-anchor">#</a> 5、align-items属性：交叉轴方向上的对齐方式</h3> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">align-items</span><span class="token punctuation">:</span> flex-start //<span class="token punctuation">(</span>默认<span class="token punctuation">)</span>----交叉轴的起点对齐
+<span class="token property">align-items</span><span class="token punctuation">:</span> flex-end //----交叉轴的终点对齐
+<span class="token property">align-items</span><span class="token punctuation">:</span> center //----交叉轴的中点对齐
+<span class="token property">align-items</span><span class="token punctuation">:</span> baseline //----项目的第一行文字的基线对齐
+<span class="token property">align-items</span><span class="token punctuation">:</span> stretch //----如果项目未设置高度或设为auto，将占满整个容器的高度
+</code></pre></div><h3 id="_6、align-content属性：多根轴线的对齐方式"><a href="#_6、align-content属性：多根轴线的对齐方式" class="header-anchor">#</a> 6、align-content属性：多根轴线的对齐方式</h3> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">align-content</span><span class="token punctuation">:</span> stretch //<span class="token punctuation">(</span>默认<span class="token punctuation">)</span> ----轴线占满整个交叉轴
+ <span class="token property">align-content</span><span class="token punctuation">:</span> flex-start // ----与交叉轴的起点对齐
+ <span class="token property">align-content</span><span class="token punctuation">:</span> flex-end // ----与交叉轴的终点对齐
+ <span class="token property">align-content</span><span class="token punctuation">:</span> center // ----与交叉轴的中点对齐
+ <span class="token property">align-content</span><span class="token punctuation">:</span> space-between // ----与交叉轴两端对齐，轴线之间的间隔平均分布
+ <span class="token property">align-content</span><span class="token punctuation">:</span> space-around // ----每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍
+
+</code></pre></div><h2 id="四、项目属性"><a href="#四、项目属性" class="header-anchor">#</a> 四、项目属性</h2> <p>1、order属性：order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p> <p>2、flex-grow属性：flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p> <p>3、flex-shrink属性：flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p> <p>4、flex-basis属性：flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p> <p>5、flex属性：flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">flex</span><span class="token punctuation">:</span> 0 1 auto
+</code></pre></div><p>6、align-self属性：align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p> <h2 id="问题总结"><a href="#问题总结" class="header-anchor">#</a> 问题总结</h2> <p>flex-grow  子元素会自动撑开剩余空间</p> <div class="language-css extra-class"><pre class="language-css"><code>
+<span class="token property">flex-grow</span><span class="token punctuation">:</span>1//
+</code></pre></div><h2 id="calc计算属性配合flex"><a href="#calc计算属性配合flex" class="header-anchor">#</a> calc计算属性配合flex</h2> <div class="language-css extra-class"><pre class="language-css"><code>  <span class="token selector">.container</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% / 3 - 1rem<span class="token punctuation">)</span>//
+  <span class="token punctuation">}</span>
+</code></pre></div><p>水平准确分布n个盒子， 并且留有缝隙</p> <p>注意：盒模型为border-box，避免padding和border值影响宽度</p> <ol><li>计算宽度calc(100% / n- 1rem)后，用 justify-content: space-evenly // 撑开剩余空间，缝隙尺寸为 n*1rem / (n+1)，但是间隙是均匀的</li> <li>计算宽度calc(100% / n- 1rem)后，用 justify-content:center，间隙用margin: 0 0.5rem  这个0.5rem刚好是1rem的一半， 和 设置justify-content: space-around 的结果一样</li> <li>考虑到多出子元素布局从左到右，使用justify-content:flex-start， 利用calc准确计算出width，margin值为减去值的一半，保证最后width总和是100%，只要父盒子居中，就能保证整体居中了</li></ol> <p><strong>进阶：</strong></p> <p><strong>问题</strong>：使用flex 的  justify-content:space-evenly（space-between) 会使最后一行元素不足时，中间出现空白，使用默认的 justify-content：felx-start,但是就不能响应式控制间隙</p> <p><strong>解决1</strong>：自己控制间隙，让弹性元素平均分布，按百分比计算宽度,为了是总宽度100%，要去减margin值（因为盒模型用的border-box，不需要计算padding值），但是还是觉得麻烦</p> <p><strong>解决2</strong>：justify-content:flex-start + 弹性元素套盒子</p> <p>给弹性元素套个父盒子， 让父盒子平均分布，间隙由子盒子的margin值控制，这样就解决了justify-content:flex-start不能控制间隙的问题，有解决了宽度响应式的问题</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// 整体 justify-content:flex-start </span>
+<span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span>flex<span class="token punctuation">;</span>
+    <span class="token property">flex-flow</span><span class="token punctuation">:</span>row wrap<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span>flex<span class="token operator">-</span>start<span class="token punctuation">;</span>
+    <span class="token comment">// 父盒子分摊100%的宽度</span>
+	<span class="token selector">.container</span> <span class="token punctuation">{</span>
+      <span class="token atrule">@media <span class="token punctuation">(</span>max-width<span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token atrule">@media <span class="token punctuation">(</span>min-width<span class="token punctuation">:</span> 768px<span class="token punctuation">)</span> and <span class="token punctuation">(</span>max-width<span class="token punctuation">:</span> 1200px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token operator">/</span>3<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token atrule">@media <span class="token punctuation">(</span>min-width<span class="token punctuation">:</span> 1200px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+        <span class="token comment">// 子盒子控制间隙</span>
+        <span class="token selector">.son</span><span class="token punctuation">{</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span>1rem<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="css-高度随宽度比例变化"><a href="#css-高度随宽度比例变化" class="header-anchor">#</a> css 高度随宽度比例变化</h2> <p>一个元素的 padding，如果值是一个百分比，那这个百分比是相对于其父元素的宽度而言的，padding-bottom 也是如此。</p> <p>使用 padding-bottom 来代替 height 来实现高度与宽度成比例的效果，将 padding-bottom设置为想要实现的 height 的值。同时将</p> <p>其 height 设置为 0 以使元素的“高度”等于 padding-bottom 的值，从而实现需要的效果</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">.childbox</span><span class="token punctuation">{</span>
+		<span class="token property">padding-bottom</span><span class="token punctuation">:</span> 20%//
+		<span class="token property">width</span><span class="token punctuation">:</span> 20%//
+		<span class="token property">height</span><span class="token punctuation">:</span> 0//
+		<span class="token property">background</span><span class="token punctuation">:</span> #888888//
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="flex是flex-grow、flex-shrink-、flex-basis缩写组合。"><a href="#flex是flex-grow、flex-shrink-、flex-basis缩写组合。" class="header-anchor">#</a> flex是flex-grow、flex-shrink 、flex-basis缩写组合。</h2> <blockquote><p>建议使用 flex 面不要单独使用 flex-grow / flew-shrink / flex-basis 。</p></blockquote> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">flex</span><span class="token punctuation">:</span>1 0 100px
+ // 表示尺寸可以变大 不进行缩小 基本尺寸为100px
+</code></pre></div><p>flex：1，表示子元素会变大占据弹性父盒子的剩余空间，但是父盒子必须指定宽度或高度</p> <h2 id="自己的理解"><a href="#自己的理解" class="header-anchor">#</a> 自己的理解</h2> <ol><li><p>只要标签加了<code>display：flex</code>这个属性，那么这个标签就是一个弹性盒子，而且默认带有一个<code>flex-direction：row</code>的属性（这个容易忽略）， 为了不混淆，最好<code>display：flex</code>， <code>flex-direction：row</code>同时写</p></li> <li><p>单个盒子没有子盒子也可以设置为弹性盒子，用弹性盒子的属性来调整定位</p></li> <li><p>弹性盒子的大小受子盒子的大小影响</p></li></ol></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">7/16/2020, 9:57:48 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress-blog/frontend/css/css问题.html" class="prev">
+        CSS
+      </a></span> <span class="next"><a href="/vuepress-blog/frontend/css/iconfont.html">
+        iconfont
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vuepress-blog/assets/js/app.1fefe163.js" defer></script><script src="/vuepress-blog/assets/js/2.b8fbb471.js" defer></script><script src="/vuepress-blog/assets/js/39.52e7e99c.js" defer></script><script src="/vuepress-blog/assets/js/3.8cc36801.js" defer></script>
+  </body>
+</html>

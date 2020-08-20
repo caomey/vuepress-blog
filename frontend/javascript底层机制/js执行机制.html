@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS执行机制详解 | caomey</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/vuepress-blog/IronMan.jpg">
+    <link rel="manifest" href="/vuepress-blog/manifest.json">
+    <link rel="apple-touch-icon" href="/vuepress-blog/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/vuepress-blog/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/vuepress-blog/assets/css/0.styles.273a7b0f.css" as="style"><link rel="preload" href="/vuepress-blog/assets/js/app.1fefe163.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/2.b8fbb471.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/78.c55073af.js" as="script"><link rel="preload" href="/vuepress-blog/assets/js/3.8cc36801.js" as="script"><link rel="prefetch" href="/vuepress-blog/assets/js/10.cd279dbb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/100.c0fb210e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/101.8d30554e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/102.8a0cf9d4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/103.291ac59a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/104.cbe3afa8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/105.c56882ff.js"><link rel="prefetch" href="/vuepress-blog/assets/js/106.cda2d11f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/107.4750ce59.js"><link rel="prefetch" href="/vuepress-blog/assets/js/108.6bd8711c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/109.8963da31.js"><link rel="prefetch" href="/vuepress-blog/assets/js/11.536a6c81.js"><link rel="prefetch" href="/vuepress-blog/assets/js/110.718eba1e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/111.ddee2a4f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/112.d7983abc.js"><link rel="prefetch" href="/vuepress-blog/assets/js/113.bd6c9eaa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/114.5837fc08.js"><link rel="prefetch" href="/vuepress-blog/assets/js/115.3a6460b0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/116.e5fab2da.js"><link rel="prefetch" href="/vuepress-blog/assets/js/117.ba8f4c79.js"><link rel="prefetch" href="/vuepress-blog/assets/js/118.2b4a3197.js"><link rel="prefetch" href="/vuepress-blog/assets/js/119.3ff27d52.js"><link rel="prefetch" href="/vuepress-blog/assets/js/12.434382aa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/120.132a3b78.js"><link rel="prefetch" href="/vuepress-blog/assets/js/121.5dbfe861.js"><link rel="prefetch" href="/vuepress-blog/assets/js/122.8385dd7c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/123.72b73cc7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/124.e131c72c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/125.a37ecd68.js"><link rel="prefetch" href="/vuepress-blog/assets/js/126.e72a7d82.js"><link rel="prefetch" href="/vuepress-blog/assets/js/127.d66a2a19.js"><link rel="prefetch" href="/vuepress-blog/assets/js/128.d2bbbe9a.js"><link rel="prefetch" href="/vuepress-blog/assets/js/129.3e2a0852.js"><link rel="prefetch" href="/vuepress-blog/assets/js/13.fb36c840.js"><link rel="prefetch" href="/vuepress-blog/assets/js/130.bcfb0fa6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/131.2cfd46af.js"><link rel="prefetch" href="/vuepress-blog/assets/js/132.6f2e8b4e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/133.ae9c691c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/134.702e47f0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/135.5a30dc50.js"><link rel="prefetch" href="/vuepress-blog/assets/js/14.ad2e8bac.js"><link rel="prefetch" href="/vuepress-blog/assets/js/15.0f97ae19.js"><link rel="prefetch" href="/vuepress-blog/assets/js/16.3b6376b8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/17.31b1fa2c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/18.f86cdf82.js"><link rel="prefetch" href="/vuepress-blog/assets/js/19.53cdc9aa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/20.5a4bbd54.js"><link rel="prefetch" href="/vuepress-blog/assets/js/21.b99ff10c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/22.f99fe9ba.js"><link rel="prefetch" href="/vuepress-blog/assets/js/23.10dc7fca.js"><link rel="prefetch" href="/vuepress-blog/assets/js/24.d230860c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/25.9c3b581e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/26.a8de871f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/27.f5ed37c9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/28.e8964090.js"><link rel="prefetch" href="/vuepress-blog/assets/js/29.955cbeb7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/30.0687291f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/31.e2d55fe8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/32.0dbb88b9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/33.30b6b38d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/34.2f7312c1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/35.c1b415cc.js"><link rel="prefetch" href="/vuepress-blog/assets/js/36.4beeae64.js"><link rel="prefetch" href="/vuepress-blog/assets/js/37.e1388faa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/38.69a20638.js"><link rel="prefetch" href="/vuepress-blog/assets/js/39.52e7e99c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/4.e9822a5e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/40.eec866eb.js"><link rel="prefetch" href="/vuepress-blog/assets/js/41.edd49088.js"><link rel="prefetch" href="/vuepress-blog/assets/js/42.dcefeead.js"><link rel="prefetch" href="/vuepress-blog/assets/js/43.a150f1f8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/44.0897b967.js"><link rel="prefetch" href="/vuepress-blog/assets/js/45.92014b01.js"><link rel="prefetch" href="/vuepress-blog/assets/js/46.88f2b7d5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/47.7a7996d1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/48.7bd7e4a9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/49.3cb9f71b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/5.b62578dd.js"><link rel="prefetch" href="/vuepress-blog/assets/js/50.041863a4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/51.6e4bbbd6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/52.1216a3e8.js"><link rel="prefetch" href="/vuepress-blog/assets/js/53.0bc84fb7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/54.446406fd.js"><link rel="prefetch" href="/vuepress-blog/assets/js/55.cb8a10d9.js"><link rel="prefetch" href="/vuepress-blog/assets/js/56.bd7ec791.js"><link rel="prefetch" href="/vuepress-blog/assets/js/57.a2be869f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/58.49b32794.js"><link rel="prefetch" href="/vuepress-blog/assets/js/59.d0e84679.js"><link rel="prefetch" href="/vuepress-blog/assets/js/6.308ae663.js"><link rel="prefetch" href="/vuepress-blog/assets/js/60.b463cf62.js"><link rel="prefetch" href="/vuepress-blog/assets/js/61.18ea4a28.js"><link rel="prefetch" href="/vuepress-blog/assets/js/62.82840815.js"><link rel="prefetch" href="/vuepress-blog/assets/js/63.5f7fe631.js"><link rel="prefetch" href="/vuepress-blog/assets/js/64.5f07afaa.js"><link rel="prefetch" href="/vuepress-blog/assets/js/65.51714dd5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/66.fa2ffdde.js"><link rel="prefetch" href="/vuepress-blog/assets/js/67.fa6a9559.js"><link rel="prefetch" href="/vuepress-blog/assets/js/68.a06bf7a5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/69.c8ffa604.js"><link rel="prefetch" href="/vuepress-blog/assets/js/7.fba07196.js"><link rel="prefetch" href="/vuepress-blog/assets/js/70.e38e605d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/71.fdf3b49e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/72.c66075d5.js"><link rel="prefetch" href="/vuepress-blog/assets/js/73.27a73b1b.js"><link rel="prefetch" href="/vuepress-blog/assets/js/74.dbff0f08.js"><link rel="prefetch" href="/vuepress-blog/assets/js/75.9ad98215.js"><link rel="prefetch" href="/vuepress-blog/assets/js/76.8606dd05.js"><link rel="prefetch" href="/vuepress-blog/assets/js/77.01831823.js"><link rel="prefetch" href="/vuepress-blog/assets/js/79.25c7ced6.js"><link rel="prefetch" href="/vuepress-blog/assets/js/8.3b8959ce.js"><link rel="prefetch" href="/vuepress-blog/assets/js/80.d390edc0.js"><link rel="prefetch" href="/vuepress-blog/assets/js/81.934f3df7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/82.15582332.js"><link rel="prefetch" href="/vuepress-blog/assets/js/83.b8766bab.js"><link rel="prefetch" href="/vuepress-blog/assets/js/84.9e6253f7.js"><link rel="prefetch" href="/vuepress-blog/assets/js/85.716ae9a2.js"><link rel="prefetch" href="/vuepress-blog/assets/js/86.cfd1aaf1.js"><link rel="prefetch" href="/vuepress-blog/assets/js/87.ba389498.js"><link rel="prefetch" href="/vuepress-blog/assets/js/88.2f7a76da.js"><link rel="prefetch" href="/vuepress-blog/assets/js/89.57c56027.js"><link rel="prefetch" href="/vuepress-blog/assets/js/9.8dc45838.js"><link rel="prefetch" href="/vuepress-blog/assets/js/90.a9cdbd1d.js"><link rel="prefetch" href="/vuepress-blog/assets/js/91.c588a160.js"><link rel="prefetch" href="/vuepress-blog/assets/js/92.bfa64f4c.js"><link rel="prefetch" href="/vuepress-blog/assets/js/93.601d0901.js"><link rel="prefetch" href="/vuepress-blog/assets/js/94.fabea959.js"><link rel="prefetch" href="/vuepress-blog/assets/js/95.980ea76f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/96.e35c0be4.js"><link rel="prefetch" href="/vuepress-blog/assets/js/97.c95cd61e.js"><link rel="prefetch" href="/vuepress-blog/assets/js/98.84d23e7f.js"><link rel="prefetch" href="/vuepress-blog/assets/js/99.b411d56b.js">
+    <link rel="stylesheet" href="/vuepress-blog/assets/css/0.styles.273a7b0f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-blog/" class="home-link router-link-active"><!----> <span class="site-name">caomey</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/vuepress-blog/guide/" class="nav-link">
+  GUIDE
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript/" class="nav-link">
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript底层机制/" class="nav-link">
+  javascript底层机制
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/html/" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vuepress/" class="nav-link">
+  vuepress
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue-cli/" class="nav-link">
+  vue-cli
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vueRouter/" class="nav-link">
+  vueRouter
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Node.js/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/webpack/" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codepen/" class="nav-link">
+  codepen
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/others/" class="nav-link">
+  others
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/前端设计模式/" class="nav-link">
+  Design Patterns
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codename/" class="nav-link">
+  codename
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/UI/" class="nav-link">
+  UI
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/算法题/" class="nav-link">
+  算法题
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vscode/" class="nav-link">
+  Vscode
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/函数式编程/" class="nav-link">
+  函数式编程
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/caomey?tab=repositories" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/vuepress-blog/guide/" class="nav-link">
+  GUIDE
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript/" class="nav-link">
+  javascript
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/javascript底层机制/" class="nav-link">
+  javascript底层机制
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/html/" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vuepress/" class="nav-link">
+  vuepress
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vue-cli/" class="nav-link">
+  vue-cli
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/vueRouter/" class="nav-link">
+  vueRouter
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Node.js/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/webpack/" class="nav-link">
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codepen/" class="nav-link">
+  codepen
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/others/" class="nav-link">
+  others
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/前端设计模式/" class="nav-link">
+  Design Patterns
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/codename/" class="nav-link">
+  codename
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/UI/" class="nav-link">
+  UI
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/算法题/" class="nav-link">
+  算法题
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/Vscode/" class="nav-link">
+  Vscode
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/git/" class="nav-link">
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/vuepress-blog/frontend/函数式编程/" class="nav-link">
+  函数式编程
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/caomey?tab=repositories" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>javascript底层机制</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-blog/frontend/javascript%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/" aria-current="page" class="sidebar-link">/frontend/javascript%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/</a></li><li><a href="/vuepress-blog/frontend/javascript底层机制/js执行机制.html" class="active sidebar-link">JS执行机制详解</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-blog/frontend/javascript底层机制/js执行机制.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/vuepress-blog/frontend/javascript底层机制/js捕获和冒泡.html" class="sidebar-link">js 冒泡 与 捕获</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="js执行机制详解"><a href="#js执行机制详解" class="header-anchor">#</a> JS执行机制详解</h1> <p>定时器时间间隔的真正含义</p> <p><strong>壹 ❀ 引</strong></p> <p>通过结果倒推过程是我们常用的思考模式，我在上一篇学习promise笔记中，有少量关于promise执行顺序的例子，通过倒推，我成功让自己对于js执行机制的理解一塌糊涂，js事件机制，事件循环是面试常考的点，弄懂它们是贼有必要的。</p> <p>回顾下我学习promise的心理历程：</p> <div class="language- extra-class"><pre class="language-text"><code>let p = Promise.resolve(1);
+p.then(resp =&gt; console.log(resp));
+console.log(2);
+//2
+//1
+</code></pre></div><p>哦，原来如此，同步代码会先执行，先输出2，所以then回调是异步。</p> <div class="language- extra-class"><pre class="language-text"><code>let p1 = Promise.resolve(1);
+p1.then(resp =&gt; console.log(resp));
+let p2 = Promise.resolve(2);
+p2.then(resp =&gt; console.log(resp));
+//1
+//2
+</code></pre></div><p>哦！多个异步，先注册的回调先执行，原来如此。</p> <div class="language- extra-class"><pre class="language-text"><code>setTimeout(() =&gt; console.log(2),0);
+let p1 = Promise.resolve(1);
+p1.then(resp =&gt; console.log(resp));
+//1
+//2
+</code></pre></div><p>嗯？？？？不是先注册的异步先执行？为啥这里先输出1，promise学习下来，成功让自己懵逼。</p> <p><img src="https://img2018.cnblogs.com/blog/1213309/201904/1213309-20190424231508222-1782610456.gif" alt="img"></p> <p>理解JS执行机制是很重要的，它会让你的代码调试更符合自己的预期，其次对于面试也非常有帮助。</p> <p>介绍js执行机制的文章挺多了，这里只是做个个人思路的整理，那么开始。</p> <p><strong>贰 ❀ JavaScript中的同步异步</strong></p> <p><strong>JavaScript是一门单线程非阻塞语言</strong>，在同一时间只能专心做一件事，如果前面的事情没做，后面的事情就得耐心的等着，这就是所谓的同步。</p> <p>你会想，为什么要同步？</p> <p>JavaScript本身是一门浏览器脚本语言，更多负责用户的交互，dom操作之类；假设JS并非单线程，我让两个行为同时操作一个dom对象，那岂不是乱套了。想想我们排队取餐吃饭，如果不排队，往往容易引发争吵，编程也是现实行为的抽象。</p> <p>也许你会说，不是有web worker吗，但web worker属于浏览器的解决方法，并非JavaScript；浏览器虽然可以开多个线程，但每个线程仍然是单线程，而且也不被允许操作dom，这依旧没改变JS是单线程语言的事实。</p> <div class="language- extra-class"><pre class="language-text"><code>let funA = () =&gt; {
+    let NUM = 10000;
+    while (NUM) {
+        NUM--;
+    };
+    console.log(1);
+};
+
+let funB = () =&gt; console.log(2);
+
+funA(); //1
+funB(); //2
+</code></pre></div><p>在上述代码中，让10000进行自减如果让我们脑补这个过程是很费时的，但是对于强大的js引擎来说并不是事，也要不了太多时间；</p> <p>可在开发中我们得处理大量的网络请求，我们知道请求可能存在延迟，服务器查询也得耗时，一次请求受诸多不确定因素影响，我们不可能让一次网络请求堵塞后面的程序。</p> <p>也正因如此异步诞生了，对于不确定的网络请求，定时器之类，咱先备注一下有这些需要处理，就接着去忙同步的事情了，等手头上同步的处理完了，再来解决先前备注的异步事件。</p> <p>想想我们排队取餐吃饭，前面的哥们大声说道，牛肉面不要面只要牛肉，多葱多蒜少辣不吃香菜半小时后来取，老板也不会等他半小时把面取了再做后面顾客的生意，那真要这样，店子早倒闭了。</p> <p>那么说完同步异步，我们大概有了个抽象的概念，js会先执行同步，万一遇到异步，就先备注下有这个异步，等同步跑完了咱再来处理异步的后续操作，那么站在js角度这个过程是什么样的，我们接着说。</p> <p><strong>叁 ❀ 执行栈与任务队列</strong></p> <p>我们都知道，当一个方法被调用时，JavaScript会生成一个属于此方法的执行环境，也叫执行上下文，这个上下文中存放着方法依赖的参数，变量以及作用域等等。</p> <p>什么是执行栈呢？当调用一个方法A时，这个方法可能也会调用另一个方法B，B还可能调用方法C，而JS只能同时一件事，所以方法B、C没执行完之前，方法A也不能被释放，那总得找个地方把这些方法按顺序存一存吧，存放的地方就是执行栈。</p> <p>关于执行上下文，执行栈，具体可以阅读这篇文章 <a href="https://www.cnblogs.com/echolun/p/11438363.html" target="_blank" rel="noopener noreferrer">一篇文章看懂JS执行上下文<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 这里我们就只做简单阐述了。</p> <p>执行栈是存放同步方法调用的地方，遵从先进后出的规则：</p> <div class="language- extra-class"><pre class="language-text"><code>let A = () =&gt; {
+    B()
+    console.log(1);
+};
+let B = () =&gt; {
+    C()
+    console.log(2);
+};
+let C = () =&gt; {
+    console.log(3);
+};
+A();//3 2 1
+</code></pre></div><p>上述代码站在执行机制角度来看，是这样的，你应该也能理解递归处理不好陷入死循环后爆栈是个什么情况了：</p> <p><img src="https://img2018.cnblogs.com/blog/1213309/201905/1213309-20190502180739527-1588586769.png" alt="img"></p> <p>凭直觉来想，异步任务不可能直接在执行栈中执行，不然绝对存在堵塞的问题，那先存放在哪呢？放在了任务队列中。</p> <p>那么到这里我们又有了一个模糊的概念，同步任务与异步任务存放的地方不同，有个问题，JavaScript怎么知道什么时候去执行异步任务呢？那就不得不说事件循环。</p> <p><strong>肆 ❀ 事件循环 (Event Loop)</strong></p> <p><img src="https://img2018.cnblogs.com/blog/1213309/201905/1213309-20190502182307547-827952080.png" alt="img"></p> <p>当一个任务被执行，js会判断是否为同步任务，<strong>如果是同步，压入主线程立即执行；但如果是异步任务，移到异步处理模块(Task Table)，当异步任务有了结果，就将异步任务的回调函数注入到任务队列中等待</strong>。</p> <p>当主线程的同步任务执行完毕执行栈为空，js引擎就会读取任务队列中的第一个任务加入到执行栈执行，当此任务完成，继续重复此类操作，这也就是<strong>事件循环</strong>了，任务队列满足先进先出的特性。</p> <p>那么到这里，我们知道js引擎会利用事情循环机制来处理同步异步问题；那么问题又来了，还记得文章开头第三个例子吗，定时器和promise都是异步，为什么后面的promise反而比前面的定时器先执行，难道异步任务也有自己的先后顺序？这里就得引出宏任务与微任务了。</p> <p><strong>伍 ❀ 宏任务与微任务</strong></p> <p>我们先对宏任务微任务做个大概分类：</p> <p>**macro-task(宏任务)：**script环境 setTimeout、setInterval、I/O、事件、postMessage、 MessageChannel、setImmediate (Node.js)</p> <p>**micro-task(微任务)：**Promise，process.nextTick，MutaionObserver</p> <p>很多面孔没见过，没关系，好歹我们知道了定时器是宏任务，new Promise是微任务。我把上面的例子搬下来：</p> <div class="language- extra-class"><pre class="language-text"><code>setTimeout(() =&gt; console.log('我第一'), 1000);
+let p1 = Promise.resolve('我第二');
+p1.then(resp =&gt; console.log(resp));
+//我第二
+//我第一
+</code></pre></div><p>明明是定时器先进的异步处理模块，结果promise.then还要早于定时器先执行，为什么呢？</p> <p>这是因为，异步任务中又分为宏任务与微任务两种，当执行栈为空，JS引擎会优先处理微任务队列的任务，等到微任务队列处理完成，才会处理宏任务队列的任务。</p> <div class="language- extra-class"><pre class="language-text"><code>setTimeout(() =&gt; console.log('我第一'), 2000);
+let p1 = Promise.resolve('我第二');
+p1.then(resp =&gt; console.log(resp));
+setTimeout(() =&gt; console.log('我第三'), 1000);
+let p2 = Promise.resolve('我第四');
+p2.then(resp =&gt; console.log(resp));
+//我第二
+//我第四
+//我第三
+//我第一
+</code></pre></div><p>上述代码中，不管你异步代码是怎么个顺序，我们可以明确的是<strong>微任务优先级总是高于宏任务。</strong></p> <p>但需要注意的是，script整体环境都是一个宏任务，所以微任务由宏任务执行过程中产生，除去同步代码执行完毕后，微任务执行优先级总是要优于剩余的异步宏任务。这里引用一张图：</p> <p><img src="https://img2018.cnblogs.com/blog/1213309/201909/1213309-20190907112836373-864174874.png" alt="img"></p> <p>上图中，宏任务运行过程中可能会产生微任务，若有微任务，执行所有微任务(前期是同步代码跑完了)，微任务优先级始终高于宏任务（抛开同步代码）。</p> <p>对于任务队列具有先进先出的特性，你肯定要喷我了，如果先进先出上述代码中等待2000ms的定时器比等待1000ms的定时器晚执行？那这里就得聊聊定时器时间的具体意义了。</p> <p><strong>陆 ❀ 有趣的定时器</strong></p> <p>定期器分为一次性定时器setTimeout与周期性定时器setInterval，前者是等待N秒之后执行回调一次没了，后者是每隔N秒执行回调一次。</p> <p>有这么一个定时器：</p> <div class="language- extra-class"><pre class="language-text"><code>setTimeout(() =&gt; console.log('我第一'), 3000);
+</code></pre></div><p>站在宏观思想上理解，这行代码的意思是这个定时器将在三秒后触发，但站在微观的角度上，3000ms<strong>并不代表执行时间，而是将回调函数加入任务队列的时间</strong>，这也是为何存在定时器执行与所设置等待时间不符的问题所在。</p> <div class="language- extra-class"><pre class="language-text"><code>setTimeout(() =&gt; console.log('我第一'), 3000);
+setTimeout(() =&gt; console.log('我第二'), 3000);
+</code></pre></div><p>你猜这两个定时器怎么执行？先等三秒打印“我第一”，再等三秒打印“我第二”吗？其实不是，真正执行是是等待三秒后几乎无间隔的同时打印2个结果。</p> <p>我们可以脑补下执行顺序，首先遇到第一个定时器，告诉异步处理模块，等待三秒后将回调加入任务队列，然后又调用了第二个定时器，同样是3秒后将回调加入任务队列。</p> <p>等到执行栈为空，去任务队列拿任务，执行第一个console，这要不了多久，于是几乎无时差的又去任务队列拿第二个任务，这也导致了为什么2次输出几乎在同时进行。</p> <p>两个定时器等待时间相同，但第一个定时器回调还是先进入任务队列，所以先触发，这也印证了任务队列先进先出的规则。</p> <p>所以当我们使用周期定时器setInterval时，也会遇到执行间隔与所设时间不符的情况，比如前面有个贼复杂的操作，导致周期定时器按时间不停给任务队列加入回调，等到前面任务跑完，这时你会发现前面所积累的回调像憋久了一样一下全部一起执行了。</p> <hr> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <ol><li><p><strong>JavaScript是一门单线程非阻塞语言</strong></p></li> <li><p><strong>执行栈与任务队列</strong></p> <ul><li><p><strong>执行栈</strong>(同步)</p> <ol><li><strong>调用时压入栈中,执行完从栈中弹出</strong></li></ol></li> <li><p><strong>任务队列</strong>(异步)</p> <ol><li><p><strong>宏任务与微任务</strong>,promise是微任务,定时器是宏任务</p></li> <li><p><strong>JS引擎会优先处理微任务队列的任务</strong></p></li></ol></li></ul></li></ol></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">8/20/2020, 12:43:27 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress-blog/frontend/javascript%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/" class="prev router-link-active">
+        /frontend/javascript%E5%BA%95%E5%B1%82%E6%9C%BA%E5%88%B6/
+      </a></span> <span class="next"><a href="/vuepress-blog/frontend/javascript底层机制/js捕获和冒泡.html">
+        js 冒泡 与 捕获
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/vuepress-blog/assets/js/app.1fefe163.js" defer></script><script src="/vuepress-blog/assets/js/2.b8fbb471.js" defer></script><script src="/vuepress-blog/assets/js/78.c55073af.js" defer></script><script src="/vuepress-blog/assets/js/3.8cc36801.js" defer></script>
+  </body>
+</html>
